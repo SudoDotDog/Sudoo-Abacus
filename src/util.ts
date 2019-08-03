@@ -6,6 +6,16 @@
 
 import { OPERATOR } from "./declare";
 
+export const isRise = (target?: string): boolean => {
+
+    return target === OPERATOR.RISE;
+};
+
+export const isDrown = (target?: string): boolean => {
+
+    return target === OPERATOR.DROWN;
+};
+
 export const isOperator = (value: string): boolean => {
 
     const list: string[] = [
@@ -30,5 +40,12 @@ export const priority = (a: string, b: string): boolean => {
         [OPERATOR.RISE]: 1,
         [OPERATOR.DROWN]: 4,
     };
-    return map[a] <= map[b];
+
+    const first: number | undefined = map[a as OPERATOR];
+    const second: number | undefined = map[b as OPERATOR];
+
+    if (!first || !second) {
+        return false;
+    }
+    return first <= second;
 };
