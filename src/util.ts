@@ -6,6 +6,11 @@
 
 import { OPERATOR } from "./declare";
 
+export const splitExpression = (expression: string, split: string = ' '): string[] => {
+
+    return expression.split(split);
+};
+
 export const isRise = (target?: string): boolean => {
 
     return target === OPERATOR.RISE;
@@ -55,7 +60,7 @@ export const ensureNumber = (target: any): number => {
     const numeric: number = Number(target);
 
     if (isNaN(target)) {
-        throw new Error("[Sudoo-Abacus] Not a Number");
+        throw new Error(`[Sudoo-Abacus] "${target}" Not a Number`);
     }
 
     return numeric;

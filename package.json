@@ -1,6 +1,6 @@
 {
   "name": "@sudoo/abacus",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": ":fish_cake: Simple calculate for js",
   "main": "index.js",
   "repository": {

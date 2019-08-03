@@ -49,4 +49,20 @@ describe('Given {Parser} class', (): void => {
 
         expect(Parser.fromExpression(expression).toExpression()).to.be.equal(result);
     });
+
+    it('should be able throw unmatched mark - 1', (): void => {
+
+        const expression: string = '( 3 + 5 ) * ( 4 + 2 ) )';
+        const error: string = '[Sudoo-Abacus] Unmatched Mark';
+
+        expect(() => Parser.fromExpression(expression).toExpression()).to.be.throw(error);
+    });
+
+    it('should be able throw unmatched mark - 2', (): void => {
+
+        const expression: string = '( 3 + 5 ) * ) ( 4 + 2';
+        const error: string = '[Sudoo-Abacus] Unmatched Mark';
+
+        expect(() => Parser.fromExpression(expression).toExpression()).to.be.throw(error);
+    });
 });

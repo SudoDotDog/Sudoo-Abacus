@@ -4,19 +4,43 @@
  * @description Abacus
  */
 
+import { expandExpression } from "./expand";
+import { Parser } from "./parser";
+
 export class Abacus {
 
-    public static create(): Abacus {
+    public static fromExpression(expression: string, split?: string) {
 
-        return new Abacus();
+        const parser: Parser = Parser.fromExpression(expression, split);
+        return new Abacus(parser);
     }
 
-    private constructor() {
+    public static fromList(list: string[]) {
 
+        const parser: Parser = Parser.fromList(list);
+        return new Abacus(parser);
     }
 
-    public evaluate(): number {
+    private readonly _parser: Parser;
 
-        return 0;
+    private constructor(parser: Parser) {
+
+        this._parser = parser;
+    }
+
+    public toNotationList(): string[] {
+
+        return this._parser.toList();
+    }
+
+    public toNotationExpression(): string {
+
+        return this._parser.toExpression();
+    }
+
+    public calculate(): number {
+
+        const list: string[] = this._parser.toList();
+        return expandExpression(list);
     }
 }

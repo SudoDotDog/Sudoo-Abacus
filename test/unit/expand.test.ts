@@ -6,7 +6,8 @@
  */
 
 import { expect } from 'chai';
-import { expandExpression, splitExpression } from '../../src/expand';
+import { expandExpression } from '../../src/expand';
+import { splitExpression } from '../../src/util';
 
 describe('Given [Expand] functions', (): void => {
 

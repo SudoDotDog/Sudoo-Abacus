@@ -7,11 +7,6 @@
 import { OPERATOR } from "./declare";
 import { calculate, ensureNumber, isOperator } from "./util";
 
-export const splitExpression = (expression: string, split: string = ' '): string[] => {
-
-    return expression.split(split);
-};
-
 export const expandExpression = (list: string[]): number => {
 
     const cloned: string[] = [...list];

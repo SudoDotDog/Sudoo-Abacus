@@ -4,8 +4,7 @@
  * @description Parser
  */
 
-import { splitExpression } from "./expand";
-import { isDrown, isOperator, isRise, priority } from "./util";
+import { isDrown, isOperator, isRise, priority, splitExpression } from "./util";
 
 export class Parser {
 
@@ -67,10 +66,14 @@ export class Parser {
         } else if (isDrown(current)) {
 
             let temp: string | undefined = this._buffer.pop();
-            while (!isRise(temp)) {
+            while (!isRise(temp) && this._hasBuffer()) {
 
                 this._pushResult(temp);
                 temp = this._buffer.pop();
+            }
+
+            if (!isRise(temp)) {
+                throw new Error("[Sudoo-Abacus] Unmatched Mark");
             }
         } else {
 
