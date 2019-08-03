@@ -5,3 +5,7 @@
  */
 
 export * from "./abacus";
+export * from "./declare";
+export * from "./expand";
+export * from "./parser";
+

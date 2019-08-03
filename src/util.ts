@@ -49,3 +49,27 @@ export const priority = (a: string, b: string): boolean => {
     }
     return first <= second;
 };
+
+export const ensureNumber = (target: any): number => {
+
+    const numeric: number = Number(target);
+
+    if (isNaN(target)) {
+        throw new Error("[Sudoo-Abacus] Not a Number");
+    }
+
+    return numeric;
+};
+
+export const calculate = (operator: OPERATOR, first: number, second: number) => {
+
+    switch (operator) {
+
+        case OPERATOR.PLUS: return first + second;
+        case OPERATOR.MINUS: return first - second;
+        case OPERATOR.TIMES: return first * second;
+        case OPERATOR.DIVIDE: return first / second;
+    }
+
+    throw new Error("[Sudoo-Abacus] Invalid operator");
+};

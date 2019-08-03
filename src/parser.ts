@@ -4,13 +4,14 @@
  * @description Parser
  */
 
+import { splitExpression } from "./expand";
 import { isDrown, isOperator, isRise, priority } from "./util";
 
 export class Parser {
 
-    public static fromExpression(expression: string, split: string = ' ') {
+    public static fromExpression(expression: string, split?: string) {
 
-        return new Parser()._parse(expression.split(split));
+        return new Parser()._parse(splitExpression(expression, split));
     }
 
     public static fromList(list: string[]) {
