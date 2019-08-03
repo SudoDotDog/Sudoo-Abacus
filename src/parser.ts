@@ -21,7 +21,17 @@ export class Parser {
     private readonly _buffer: string[] = [];
     private readonly _result: string[] = [];
 
-    private _parse(expression: string[]) {
+    public toList(): string[] {
+
+        return this._result;
+    }
+
+    public toExpression(): string {
+
+        return this._result.join(' ');
+    }
+
+    private _parse(expression: string[]): this {
 
         let temp: string[] = [];
         for (const current of expression) {
@@ -42,17 +52,15 @@ export class Parser {
             this._pushResult(this._buffer.pop());
         }
 
-        return this._result;
+        return this;
     }
 
-    private _symbol(current: string) {
+    private _symbol(current: string): this {
 
         if (!this._lastBuffer()) {
-            this._pushBuffer(current);
-            return;
-        }
 
-        if (isRise(current)) {
+            this._pushBuffer(current);
+        } else if (isRise(current)) {
 
             this._pushBuffer(current);
         } else if (isDrown(current)) {
@@ -63,17 +71,16 @@ export class Parser {
                 this._pushResult(temp);
                 temp = this._buffer.pop();
             }
-        } else if (priority(current, this._lastBuffer())) {
+        } else {
 
             while (priority(current, this._lastBuffer())) {
 
                 this._pushResult(this._buffer.pop());
             }
             this._pushBuffer(current);
-        } else {
-
-            this._pushBuffer(current);
         }
+
+        return this;
     }
 
     private _lastBuffer(): string {
