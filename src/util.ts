@@ -66,7 +66,7 @@ export const ensureNumber = (target: any): number => {
     return numeric;
 };
 
-export const calculate = (operator: OPERATOR, first: number, second: number) => {
+export const calculate = (operator: OPERATOR, first: number, second: number): number => {
 
     switch (operator) {
 

@@ -8,12 +8,12 @@ import { isDrown, isOperator, isRise, priority, splitExpression } from "./util";
 
 export class Parser {
 
-    public static fromExpression(expression: string, split?: string) {
+    public static fromExpression(expression: string, split?: string): Parser {
 
         return new Parser()._parse(splitExpression(expression, split));
     }
 
-    public static fromList(list: string[]) {
+    public static fromList(list: string[]): Parser {
 
         return new Parser()._parse(list);
     }
@@ -89,7 +89,7 @@ export class Parser {
 
     private _lastBuffer(): string {
 
-        return this._buffer[this._buffer.length - 1] as string;
+        return this._buffer[this._buffer.length - 1];
     }
 
     private _pushBuffer(...target: any[]): this {

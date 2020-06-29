@@ -9,13 +9,13 @@ import { Parser } from "./parser";
 
 export class Abacus {
 
-    public static fromExpression(expression: string, split?: string) {
+    public static fromExpression(expression: string, split?: string): Abacus {
 
         const parser: Parser = Parser.fromExpression(expression, split);
         return new Abacus(parser);
     }
 
-    public static fromList(list: string[]) {
+    public static fromList(list: string[]): Abacus {
 
         const parser: Parser = Parser.fromList(list);
         return new Abacus(parser);

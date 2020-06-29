@@ -29,6 +29,7 @@ describe('Given [Expand] functions', (): void => {
 
         const expression: string = '5 1 2 + 4 * + 3 -';
 
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         expect(expandExpression(splitExpression(expression))).to.be.equal(14);
     });
 
@@ -36,6 +37,7 @@ describe('Given [Expand] functions', (): void => {
 
         const expression: string = '3 5 + 4 2 + *';
 
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         expect(expandExpression(splitExpression(expression))).to.be.equal(48);
     });
 

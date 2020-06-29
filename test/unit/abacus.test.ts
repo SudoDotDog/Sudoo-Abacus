@@ -11,13 +11,14 @@ import { Abacus } from '../../src/abacus';
 
 describe('Given {Abacus} class', (): void => {
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const chance: Chance.Chance = new Chance('abacus-abacus');
 
     it('should be able to create', (): void => {
 
         const abacus: Abacus = Abacus.fromExpression('');
 
-        // tslint:disable-next-line
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         expect(abacus).to.be.exist;
         expect(abacus).to.be.instanceOf(Abacus);
     });
@@ -26,6 +27,7 @@ describe('Given {Abacus} class', (): void => {
 
         const abacus: Abacus = Abacus.fromExpression('5 + ( ( 1 + 2 ) * 4 ) - 3');
 
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         expect(abacus.calculate()).to.be.equal(14);
     });
 
@@ -40,6 +42,7 @@ describe('Given {Abacus} class', (): void => {
 
         const abacus: Abacus = Abacus.fromExpression('(3+5)*(4+2)', '');
 
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         expect(abacus.calculate()).to.be.equal(48);
     });
 });
