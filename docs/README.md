@@ -6,3 +6,11 @@
 [![downloads](https://img.shields.io/npm/dm/@sudoo/abacus.svg)](https://www.npmjs.com/package/@sudoo/abacus)
 
 :fish_cake: Simple calculate for js
+
+## Install
+
+```sh
+yarn add @sudoo/abacus
+# Or
+npm install @sudoo/abacus --save
+```
