@@ -14,3 +14,16 @@ yarn add @sudoo/abacus
 # Or
 npm install @sudoo/abacus --save
 ```
+
+## Usage
+
+Abacus calculation using it's own parser.
+
+```ts
+import { Abacus } from "@sudoo/abacus";
+
+const abacus: Abacus = Abacus.fromExpression('5 + ( ( 1 + 2 ) * 4 ) - 3');
+abacus.calculate(); // 14
+```
+
+More usage example is working in progress, see source code for more details.
