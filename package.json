@@ -1,8 +1,7 @@
 {
   "name": "@sudoo/abacus",
   "version": "1.1.0",
-  "description": ":fish_cake: Simple calculate for js",
-  "main": "index.js",
+  "description": "Simple calculate for js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SudoDotDog/Sudoo-Abacus.git"
@@ -16,9 +15,7 @@
     "url": "https://github.com/SudoDotDog/Sudoo-Abacus/issues"
   },
   "homepage": "https://github.com/SudoDotDog/Sudoo-Abacus#readme",
-  "dependencies": {},
   "devDependencies": {
-    "@sudoo/io": "^1.8.0",
     "@sudoo/triforce": "^2.9.6"
   },
   "nyc": {
