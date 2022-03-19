@@ -1,11 +1,11 @@
 # Sudoo-Abacus
 
-[![Build Status](https://travis-ci.com/SudoDotDog/Sudoo-Abacus.svg?branch=master)](https://travis-ci.com/SudoDotDog/Sudoo-Abacus)
+[![Continuous Integration](https://github.com/SudoDotDog/Sudoo-Abacus/actions/workflows/ci.yml/badge.svg)](https://github.com/SudoDotDog/Sudoo-Abacus/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/SudoDotDog/Sudoo-Abacus/branch/master/graph/badge.svg)](https://codecov.io/gh/SudoDotDog/Sudoo-Abacus)
-[![npm version](https://badge.fury.io/js/%40sudoo%2Fabacus.svg)](https://badge.fury.io/js/%40sudoo%2Fabacus)
+[![npm version](https://badge.fury.io/js/%40sudoo%2Fabacus.svg)](https://www.npmjs.com/package/@sudoo/abacus)
 [![downloads](https://img.shields.io/npm/dm/@sudoo/abacus.svg)](https://www.npmjs.com/package/@sudoo/abacus)
 
-:fish_cake: Simple calculate for js
+Simple calculate for js
 
 ## Install
 
